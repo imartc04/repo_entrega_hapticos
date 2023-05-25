@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+  <Scene>
+    <Transform rotation='0 1 0 0.785'>
+      <Transform translation='-4 0 0'>
+        <Transform scale='0.1 0.1 0.1'>
+          <Inline url="assets/models/Blathers.x3d" />
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform scale='0.1 0.1 0.1'>
+      <Inline url="assets/models/Gullivarrr.x3d" />
+    </Transform>
+
+    <Transform rotation='0 1 0 5.495'>
+      <Transform translation='4 0 0'>
+        <Transform scale='0.1 0.1 0.1'>
+          <Inline url="assets/models/Pascal.x3d" />
+        </Transform>
+      </Transform>
+    </Transform>
+
+    <Transform translation="0 0 0" scale="4 1 2">
+      <Shape>
+        <Appearance>
+          <Material diffuseColor="1 1 1"/>
+          <ImageTexture url="assets/textures/ac_grass.png"/>
+        </Appearance>
+        <Cylinder height="0.05" radius="1.5"/>
+      </Shape>
+    </Transform>
+
+    <Transform translation="0 1 -4">
+      <Shape>
+        <Appearance>
+          <Material emissiveColor="0 0 0"/>
+          <ImageTexture url="assets/textures/ac_logo.png"/>
+        </Appearance>
+        <Rectangle2D size="4 2"/>
+      </Shape>
+    </Transform>
+
+    <DirectionalLight direction="0 -1 -1" color="1 1 1">
+    </DirectionalLight>
+
+    <SpotLight direction="-1 -1 0" location="-4 5 0" color="0 1 0">
+    </SpotLight>
+
+    <SpotLight direction="0 -1 0" location="0 5 0" color="1 0 0">
+    </SpotLight>
+
+    <SpotLight direction="1 -1 0" location="4 5 0" color="0 0 1">
+    </SpotLight>
+
+    <Viewpoint position="0 5 9" orientation="1 0 0 5.75"/> 
+    
+  </Scene>
+</X3D>
