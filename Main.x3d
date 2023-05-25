@@ -17,16 +17,7 @@
     </Transform>
 
     <Transform scale='0.1 0.1 0.1'>
-        
-      <Inline url="assets/models/Gullivarrr.x3d">
-        <FrictionalSurface stiffness='0.5'
-                                       damping='1'
-                                       staticFriction='0'
-                                       dynamicFriction='0' />
-      </Inline>
-      
- 
-  
+      <Inline url="assets/models/Gullivarrr.x3d" />
     </Transform>
 
     <Transform rotation='0 1 0 5.495'>
@@ -44,8 +35,15 @@
         <Appearance>
           <Material diffuseColor="1 1 1"/>
           <ImageTexture url="assets/textures/ac_grass.png"/>
+          <DepthMapSurface  depthMap="assets/textures/ac_grass_depthmap.png"  stiffness='1'
+                                       damping='0'
+                                       staticFriction='0'
+                                       dynamicFriction='0' />
         </Appearance>
-        <Cylinder height="0.05" radius="1.5"/>
+        <Cylinder height="0.05" radius="1.5"  
+        
+        
+        />
       </Shape>
     </Transform>
 
