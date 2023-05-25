@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
+<X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
+ <Scene>
+<DeviceInfo>
+    
+<!--
+<PhantomDevice deviceName="Phantom1"
+positionCalibration="1 0 0 0
+0 1 0 0
+0 0 1 0
+0 0 0 1" >
+<OpenHapticsRenderer/>
+    <Shape DEF="STYLUS" containerField="stylus">
+        <Appearance>
+            <Material diffuseColor="1 1 0"/> 
+        </Appearance>
+        
+        <Cone bottomRadius="0.25" height="0.5"/>
+    </Shape>
+
+</PhantomDevice>
+ -->
+
+<MouseHapticsDevice positionCalibration='1 0 0 0
+                                        0 1 0 0
+                                        0 0 1 0
+                                        0 0 0 1'>
+               
+        <Shape containerField='stylus'>
+            <Cone bottomRadius='0.25' height='0.5' />
+            <Appearance>
+                <Material diffuseColor="1 1 0"/> 
+            </Appearance>
+        </Shape>
+        
+        <GodObjectRenderer />
+    </MouseHapticsDevice>
+
+
+</DeviceInfo>
+  </Scene>
+</X3D>

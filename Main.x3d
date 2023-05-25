@@ -2,22 +2,39 @@
 <!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.3//EN" "http://www.web3d.org/specifications/x3d-3.3.dtd">
 <X3D profile='Immersive' version='3.3' xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.3.xsd'>
   <Scene>
+    <TimeSensor DEF="timer" cycleInterval="5" loop="true"/>
+    <PositionInterpolator DEF="interpolator" key="0 0.25 0.5 0.75 1" keyValue="0 1 -4 4 0.5 -4 0 1 -4 -4 0.5 -4 0 1 -4"/>
+    <ROUTE fromNode="timer" fromField="fraction_changed" toNode="interpolator" toField="set_fraction"/>
+
     <Transform rotation='0 1 0 0.785'>
       <Transform translation='-4 0 0'>
         <Transform scale='0.1 0.1 0.1'>
-          <Inline url="assets/models/Blathers.x3d" />
+          <Inline url="assets/models/Blathers.x3d">
+   
+          </Inline>
         </Transform>
       </Transform>
     </Transform>
 
     <Transform scale='0.1 0.1 0.1'>
-      <Inline url="assets/models/Gullivarrr.x3d" />
+        
+      <Inline url="assets/models/Gullivarrr.x3d">
+        <FrictionalSurface stiffness='0.5'
+                                       damping='1'
+                                       staticFriction='0'
+                                       dynamicFriction='0' />
+      </Inline>
+      
+ 
+  
     </Transform>
 
     <Transform rotation='0 1 0 5.495'>
       <Transform translation='4 0 0'>
         <Transform scale='0.1 0.1 0.1'>
-          <Inline url="assets/models/Pascal.x3d" />
+          <Inline url="assets/models/Pascal.x3d">
+          
+          </Inline>
         </Transform>
       </Transform>
     </Transform>
@@ -32,7 +49,7 @@
       </Shape>
     </Transform>
 
-    <Transform translation="0 1 -4">
+    <Transform DEF="object2" translation="0 1 -4">
       <Shape>
         <Appearance>
           <Material emissiveColor="0 0 0"/>
@@ -42,19 +59,20 @@
       </Shape>
     </Transform>
 
-    <DirectionalLight direction="0 -1 -1" color="1 1 1">
-    </DirectionalLight>
+    <DirectionalLight direction="0 -1 -1" color="1 1 1" />
 
-    <SpotLight direction="-1 -1 0" location="-4 5 0" color="0 1 0">
-    </SpotLight>
+    <SpotLight direction="-1 -1 0" location="-4 5 0" color="0 1 0" />
 
-    <SpotLight direction="0 -1 0" location="0 5 0" color="1 0 0">
-    </SpotLight>
+    <SpotLight direction="0 -1 0" location="0 5 0" color="1 0 0" />
 
-    <SpotLight direction="1 -1 0" location="4 5 0" color="0 0 1">
-    </SpotLight>
+    <SpotLight direction="1 -1 0" location="4 5 0" color="0 0 1" />
 
-    <Viewpoint position="0 5 9" orientation="1 0 0 5.75"/> 
+    <Viewpoint position="0 5 9" orientation="1 0 0 5.75" />
     
+    <ROUTE fromNode="interpolator" fromField="value_changed" toNode="object2" toField="set_translation"/>
+    
+     <Inline url= "HapticSettings.x3d"/>
+     
+     
   </Scene>
 </X3D>
